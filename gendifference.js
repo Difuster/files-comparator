@@ -2,17 +2,16 @@ import path from 'path';
 import { readFileSync } from 'fs';
 import _ from 'lodash';
 
-const fileExtension = (file) => {
-  return path.extname(file);
-};
+const fileExtension = (file) => path.extname(file);
 
 const readFile = (file) => readFileSync(path.resolve('..', '__fixtures__', file), 'utf-8');
 
 const parseFile = (file, extension) => {
+  let data;
   if (extension === '.json') {
-    const data = JSON.parse(file);
-    return data;
+    data = JSON.parse(file);
   }
+  return data;
 };
 
 const compareData = (data1, data2) => {
