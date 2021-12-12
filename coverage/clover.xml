@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1639312803396" clover="3.2.0">
-  <project timestamp="1639312803396" name="All files">
+<coverage generated="1639313083420" clover="3.2.0">
+  <project timestamp="1639313083421" name="All files">
     <metrics statements="54" coveredstatements="38" conditionals="11" coveredconditionals="10" methods="6" coveredmethods="2" elements="71" coveredelements="50" complexity="0" loc="54" ncloc="54" packages="1" files="1" classes="1"/>
     <file name="gendifference.js" path="/home/difuster/frontend-project-lvl2/gendifference.js">
       <metrics statements="54" coveredstatements="38" conditionals="11" coveredconditionals="10" methods="6" coveredmethods="2"/>
