@@ -1,4 +1,4 @@
-import { compareData } from '../gendifference.js';
+import { compareData } from '../src/comparator.js';
 
 const file1 = {
   host: 'jino.ru',
@@ -15,6 +15,8 @@ const file2 = {
 
 const result = `{\n  - follow: false\n  - host: jino.ru\n  + host: hexlet.io\n  - proxy: 123.234.53.22\n  - timeout: 70\n  + timeout: 80\n  + verbose: true\n}`;
 
-test('differences are defined', () => {
-  expect(compareData(file1, file2)).toBe(result);
+describe('compare two objects', () => {
+  test('differences are defined', () => {
+    expect(compareData(file1, file2)).toBe(result);
+  });
 });
