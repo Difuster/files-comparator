@@ -24,8 +24,7 @@ const compareData = (data1, data2) => {
         return {
           name: key,
           type: 'changed',
-          removedValue: value1,
-          addedValue: value2,
+          value: [value1, value2],
         };
       }
     }
@@ -43,6 +42,7 @@ const compareData = (data1, data2) => {
         value: value2,
       };
     }
+    return null;
   });
   return result;
 };

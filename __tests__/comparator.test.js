@@ -1,4 +1,4 @@
-import { compareData } from '../src/comparator.js';
+import compareData from '../src/comparator.js';
 
 const file1 = {
   host: 'jino.ru',

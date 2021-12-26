@@ -1,7 +1,7 @@
 import path from 'path';
 import {
   getExtension, parseData,
-} from '../src/parsers.js';
+} from '../src/parser.js';
 
 const jsonFile = path.resolve('.', '__fixtures__', 'file1.json');
 const yamlFile = path.resolve('.', '__fixtures__', 'file1.yaml');
