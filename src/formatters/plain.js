@@ -26,7 +26,7 @@ const plain = (data) => {
           return `Property '${[...keys, item.name].join('.')}' was updated. From [complex value] to ${isString(item.value[1])}`;
         }
         if (_.isPlainObject(item.value[1])) {
-          return `Property '${[...keys, item.name].join('.')}' was updated. From ${isString(item.value[1])} to [complex value]`;
+          return `Property '${[...keys, item.name].join('.')}' was updated. From ${isString(item.value[0])} to [complex value]`;
         }
 
         return `Property '${[...keys, item.name].join('.')}' was updated. From ${isString(item.value[0])} to ${isString(item.value[1])}`;

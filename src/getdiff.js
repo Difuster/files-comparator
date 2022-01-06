@@ -6,6 +6,7 @@ const genDiff = (file1, file2, format) => {
   const data1 = parseData(file1);
   const data2 = parseData(file2);
   const data = getTree(data1, data2);
+  console.dir(data, { depth: 10 });
   return formatData(data, format);
 };
 

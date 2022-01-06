@@ -26,10 +26,10 @@ const stylish = (data) => {
 
       if (item.type === 'changed') {
         if (_.isPlainObject(item.value[0])) {
-          return `${currentIndent}${item.name}: {\n${curIndRemVal}${getDataFromObject(item.value[0])}\n${curIndAddVal}${item.name}: ${item.value[1]}\n${currentIndent}}`;
+          return `${curIndRemVal}${item.name}: {\n${getDataFromObject(item.value[0], depth + 1)}\n${currentIndent}}\n${curIndAddVal}${item.name}: ${item.value[1]}`;
         }
         if (_.isPlainObject(item.value[1])) {
-          return `${currentIndent}${item.name}: {\n${curIndAddVal}${getDataFromObject(item.value[1])}\n${curIndRemVal}${item.name}: ${item.value[0]}\n${currentIndent}}`;
+          return `${curIndRemVal}${item.name}: ${item.value[0]}\n${curIndAddVal}${item.name}: {\n${getDataFromObject(item.value[1], depth + 1)}\n${currentIndent}}`;
         }
         return `${curIndRemVal}${item.name}: ${item.value[0]}\n${curIndAddVal}${item.name}: ${item.value[1]}`;
       }
