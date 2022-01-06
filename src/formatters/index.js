@@ -3,21 +3,16 @@ import plain from './plain.js';
 import json from './json.js';
 
 const formatData = (data, formatType) => {
-  let result;
   if (formatType === 'stylish') {
-    result = stylish(data);
-    return result;
+    return stylish(data);
   }
   if (formatType === 'plain') {
-    result = plain(data);
-    return result;
+    return plain(data);
   }
   if (formatType === 'json') {
-    result = json(data);
-    return result;
+    return json(data);
   }
-  result = `This format is not supported`;
-  return result;
+  return new Error(`This format is not supported`);
 };
 
 export default formatData;

@@ -10,8 +10,13 @@ const parseData = (file) => {
   const filePath = getPath(file);
   const fileValue = getValue(filePath);
   const fileExtension = getExtension(file);
-  const data = fileExtension === '.json' ? JSON.parse(fileValue) : yaml.load(fileValue);
-  return data;
+  if (fileExtension === '.json') {
+    return JSON.parse(fileValue);
+  }
+  if (fileExtension === '.yaml' || fileExtension === '.yml') {
+    return yaml.load(fileValue);
+  }
+  return new Error('Unknown data format');
 };
 
 export {
