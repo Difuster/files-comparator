@@ -12,7 +12,7 @@ const formatData = (data, formatType) => {
   if (formatType === 'json') {
     return json(data);
   }
-  return new Error(`This format is not supported`);
+  throw new Error(`This format is not supported`);
 };
 
 export default formatData;
