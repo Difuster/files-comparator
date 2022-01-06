@@ -35,12 +35,12 @@ const resultStylish = `{
       - baz: bas
       + baz: bars
         foo: bar
-        nest: {
-      - key: value
-      + nest: str
+      - nest: {
+            key: value
         }
+      + nest: str
     }
-  - group2:{
+  - group2: {
         abc: 12345
         deep: {
             id: 45

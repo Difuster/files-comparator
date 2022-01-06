@@ -43,7 +43,7 @@ const stylish = (data) => {
 
       if (item.type === 'removed') {
         if (_.isPlainObject(item.value)) {
-          return `${curIndRemVal}${item.name}:{\n${getDataFromObject(item.value, depth + 1)}\n${currentIndent}}`;
+          return `${curIndRemVal}${item.name}: {\n${getDataFromObject(item.value, depth + 1)}\n${currentIndent}}`;
         }
         return `${curIndRemVal}${item.name}: ${(item.value)}`;
       }
