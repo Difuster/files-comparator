@@ -12,7 +12,7 @@ const formatData = (data, formatType) => {
   if (formatType === 'json') {
     return json(data);
   }
-  return new Error('Unknown format type');
+  throw new Error('Unknown format type');
 };
 
 export default formatData;
