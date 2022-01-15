@@ -3,7 +3,7 @@ import getTree from './tree.js';
 import formatData from './formatters/index.js';
 import { getPath, getValue, getExtension } from './getpath.js';
 
-const genDiff = (file1, file2, format) => {
+const genDiff = (file1, file2, format = 'stylish') => {
   const filePath1 = getPath(file1);
   const filePath2 = getPath(file2);
   const fileValue1 = getValue(filePath1);

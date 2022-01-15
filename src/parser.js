@@ -7,7 +7,7 @@ const parseData = (data, ext) => {
   if (ext === 'yaml' || ext === 'yml') {
     return yaml.load(data);
   }
-  return new Error('Unknown file format');
+  throw new Error('Unknown file format');
 };
 
 export default parseData;
