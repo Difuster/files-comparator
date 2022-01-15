@@ -12,8 +12,6 @@ const formatData = (data, formatType) => {
   if (formatType === 'stylish') {
     return stylish(data);
   }
-
-  return new Error('Unknown output format');
 };
 
 export default formatData;
