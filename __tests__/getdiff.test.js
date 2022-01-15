@@ -1,5 +1,4 @@
 import { fileURLToPath } from 'url';
-import { readFileSync } from 'fs';
 import path, { dirname } from 'path';
 import genDiff from '../src/getdiff.js';
 import stylish from '../__fixtures__/stylish.js';

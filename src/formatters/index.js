@@ -13,7 +13,7 @@ const formatData = (data, formatType) => {
     return stylish(data);
   }
 
-  return new Error('Unknown data format');
+  return new Error('Unknown output format');
 };
 
 export default formatData;
