@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 const plain = (data) => {
-  const isString = (value) => {
+  const toString = (value) => {
     const str = typeof value === 'string' ? `'${value}'` : value;
     return str;
   };
@@ -14,7 +14,7 @@ const plain = (data) => {
 
       if (item.type === 'added') {
         item.value.toString();
-        return _.isPlainObject(item.value) ? `Property '${[...keys, item.name].join('.')}' was added with value: [complex value]` : `Property '${[...keys, item.name].join('.')}' was added with value: ${isString(item.value)}`;
+        return _.isPlainObject(item.value) ? `Property '${[...keys, item.name].join('.')}' was added with value: [complex value]` : `Property '${[...keys, item.name].join('.')}' was added with value: ${toString(item.value)}`;
       }
 
       if (item.type === 'removed') {
@@ -23,13 +23,13 @@ const plain = (data) => {
 
       if (item.type === 'changed') {
         if (_.isPlainObject(item.value[0])) {
-          return `Property '${[...keys, item.name].join('.')}' was updated. From [complex value] to ${isString(item.value[1])}`;
+          return `Property '${[...keys, item.name].join('.')}' was updated. From [complex value] to ${toString(item.value[1])}`;
         }
         if (_.isPlainObject(item.value[1])) {
-          return `Property '${[...keys, item.name].join('.')}' was updated. From ${isString(item.value[0])} to [complex value]`;
+          return `Property '${[...keys, item.name].join('.')}' was updated. From ${toString(item.value[0])} to [complex value]`;
         }
 
-        return `Property '${[...keys, item.name].join('.')}' was updated. From ${isString(item.value[0])} to ${isString(item.value[1])}`;
+        return `Property '${[...keys, item.name].join('.')}' was updated. From ${toString(item.value[0])} to ${toString(item.value[1])}`;
       }
       return null;
     })

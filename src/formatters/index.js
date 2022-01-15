@@ -9,7 +9,11 @@ const formatData = (data, formatType) => {
   if (formatType === 'json') {
     return json(data);
   }
-  return stylish(data);
+  if (formatType === 'stylish') {
+    return stylish(data);
+  }
+
+  return new Error('Unknown data format');
 };
 
 export default formatData;

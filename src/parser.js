@@ -1,10 +1,5 @@
 import yaml from 'js-yaml';
-import path from 'path';
-import { readFileSync } from 'fs';
-
-const getPath = (file) => path.resolve('..', '__fixtures__', file);
-const getValue = (file) => readFileSync(file, 'utf-8');
-const getExtension = (file) => path.extname(file).slice(1);
+import { getPath, getValue, getExtension } from './getpath.js';
 
 const parseData = (file) => {
   const filePath = getPath(file);

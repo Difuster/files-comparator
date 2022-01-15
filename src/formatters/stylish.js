@@ -25,27 +25,19 @@ const stylish = (data) => {
       }
 
       if (item.type === 'changed') {
-        if (_.isPlainObject(item.value[0])) {
-          return `${curIndRemVal}${item.name}: {\n${getDataFromObject(item.value[0], depth + 1)}\n${currentIndent}}\n${curIndAddVal}${item.name}: ${item.value[1]}`;
-        }
-        if (_.isPlainObject(item.value[1])) {
-          return `${curIndRemVal}${item.name}: ${item.value[0]}\n${curIndAddVal}${item.name}: {\n${getDataFromObject(item.value[1], depth + 1)}\n${currentIndent}}`;
-        }
-        return `${curIndRemVal}${item.name}: ${item.value[0]}\n${curIndAddVal}${item.name}: ${item.value[1]}`;
+        const deletedValue = _.isPlainObject(item.value[0]) ? `{\n${getDataFromObject(item.value[0], depth + 1)}\n${currentIndent}}` : `${item.value[0]}`;
+        const addedValue = _.isPlainObject(item.value[1]) ? `{\n${getDataFromObject(item.value[1], depth + 1)}\n${currentIndent}}` : `${item.value[1]}`;
+        return `${curIndRemVal}${item.name}: ${deletedValue}\n${curIndAddVal}${item.name}: ${addedValue}`;
       }
 
       if (item.type === 'added') {
-        if (_.isPlainObject(item.value)) {
-          return `${curIndAddVal}${item.name}: {\n${getDataFromObject(item.value, depth + 1)}\n${currentIndent}}`;
-        }
-        return `${curIndAddVal}${item.name}: ${item.value}`;
+        const value = _.isPlainObject(item.value) ? `{\n${getDataFromObject(item.value, depth + 1)}\n${currentIndent}}` : `${item.value}`;
+        return `${curIndAddVal}${item.name}: ${value}`;
       }
 
       if (item.type === 'removed') {
-        if (_.isPlainObject(item.value)) {
-          return `${curIndRemVal}${item.name}: {\n${getDataFromObject(item.value, depth + 1)}\n${currentIndent}}`;
-        }
-        return `${curIndRemVal}${item.name}: ${(item.value)}`;
+        const value = _.isPlainObject(item.value) ? `{\n${getDataFromObject(item.value, depth + 1)}\n${currentIndent}}` : `${item.value}`;
+        return `${curIndRemVal}${item.name}: ${(value)}`;
       }
 
       return `${currentIndent}${item.name}: ${item.value}`;
