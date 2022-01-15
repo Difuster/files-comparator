@@ -1,19 +1,13 @@
 import yaml from 'js-yaml';
-import { getPath, getValue, getExtension } from './getpath.js';
 
-const parseData = (file) => {
-  const filePath = getPath(file);
-  const fileValue = getValue(filePath);
-  const fileExtension = getExtension(file);
-  if (fileExtension === 'json') {
-    return JSON.parse(fileValue);
+const parseData = (data, ext) => {
+  if (ext === 'json') {
+    return JSON.parse(data);
   }
-  if (fileExtension === 'yaml' || fileExtension === 'yml') {
-    return yaml.load(fileValue);
+  if (ext === 'yaml' || ext === 'yml') {
+    return yaml.load(data);
   }
-  return new Error('Unknown file extension');
+  return new Error('Unknown file format');
 };
 
-export {
-  parseData, getPath, getExtension,
-};
+export default parseData;

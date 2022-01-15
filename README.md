@@ -16,27 +16,27 @@ Available formats to display differences: stylish(default format), plain, json.
 
 `make install`
 
-#### compare json files:  
+### compare json files:  
 gendiff file1.json file2.json  
 
 [![asciicast](https://asciinema.org/a/454031.svg)](https://asciinema.org/a/454031)
   
-#### compare yaml files:  
+### compare yaml files:  
 gendiff file1.yaml file2.yaml  
 
 [![asciicast](https://asciinema.org/a/uB9GKXJWCUqVBljoiDTVqSkai.svg)](https://asciinema.org/a/uB9GKXJWCUqVBljoiDTVqSkai)
   
-#### get default output format (stylish):  
+### get default output format (stylish):  
 gendiff file1.json file2.json  
 
 [![asciicast](https://asciinema.org/a/UGEJ8kk2903z4eWT3YO7NFdCP.svg)](https://asciinema.org/a/UGEJ8kk2903z4eWT3YO7NFdCP)
   
-#### get plain output format:  
+### get plain output format:  
 gendiff file1.yaml file2.yaml --format plain  
 
 [![asciicast](https://asciinema.org/a/w0gUj6gQfmKl2kipWOEurOGj6.svg)](https://asciinema.org/a/w0gUj6gQfmKl2kipWOEurOGj6)
   
-#### get json output format:  
+### get json output format:  
 gendiff file1.yaml file2.yaml --format json  
 
 [![asciicast](https://asciinema.org/a/vIS2VjSaor1RZLXfMb6MKDhm3.svg)](https://asciinema.org/a/vIS2VjSaor1RZLXfMb6MKDhm3)
