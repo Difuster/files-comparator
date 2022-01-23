@@ -1,7 +1,7 @@
 import parseData from './parser.js';
 import getTree from './tree.js';
 import formatData from './formatters/index.js';
-import { getPath, getValue, getExtension } from './getpath.js';
+import { getPath, getValue, getExtension } from './filereader.js';
 
 const genDiff = (file1, file2, format = 'stylish') => {
   const filePath1 = getPath(file1);
